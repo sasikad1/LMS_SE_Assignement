@@ -33,8 +33,8 @@ public class ConsoleView {
         this.enrollmentService = new EnrollmentServiceImpl(studentService, courseService);
 
         // Initialize views with their dependencies (Constructor Injection)
-        this.studentView = new StudentView(scanner, studentService);
-        this.courseView = new CourseView(scanner, courseService); // CourseService injected
+        this.studentView = new StudentView(scanner, studentService); // StudentService injected
+        this.courseView = new CourseView(scanner, courseService);
         this.enrollmentView = new EnrollmentView(scanner, enrollmentService,
                 studentService, courseService);
     }

@@ -9,6 +9,7 @@ public class StudentController {
 
     private final StudentService studentService;
 
+    // Constructor injection - StudentService dependency injected
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }

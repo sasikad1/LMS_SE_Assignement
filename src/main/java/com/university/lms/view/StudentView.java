@@ -26,6 +26,7 @@ public class StudentView {
 
     public StudentView(Scanner scanner, StudentService studentService) {
         this.scanner = scanner;
+        // Creating StudentController with injected StudentService
         this.studentController = new StudentController(studentService);
     }
 
