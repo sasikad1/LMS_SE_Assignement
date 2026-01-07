@@ -19,23 +19,22 @@ public class ConsoleView {
     private static final int ENROLLMENT_MGMT = 3;
     private static final int EXIT = 0;
 
-    // Create shared services
     private final StudentService studentService = new StudentServiceImpl();
     private final CourseService courseService = new CourseServiceImpl();
     private final EnrollmentService enrollmentService;
 
-    // Views
+    // Views - injected with dependencies
     private final StudentView studentView;
     private final CourseView courseView;
     private final EnrollmentView enrollmentView;
 
     public ConsoleView() {
-        // Initialize enrollment service with dependencies
+        // Initialize enrollment service with its dependencies
         this.enrollmentService = new EnrollmentServiceImpl(studentService, courseService);
 
-        // Initialize views with proper dependencies
+        // Initialize views with their dependencies (Constructor Injection)
         this.studentView = new StudentView(scanner, studentService);
-        this.courseView = new CourseView(scanner, courseService);
+        this.courseView = new CourseView(scanner, courseService); // CourseService injected
         this.enrollmentView = new EnrollmentView(scanner, enrollmentService,
                 studentService, courseService);
     }

@@ -9,6 +9,7 @@ public class CourseController {
 
     private final CourseService courseService;
 
+    // Constructor injection
     public CourseController(CourseService courseService) {
         this.courseService = courseService;
     }

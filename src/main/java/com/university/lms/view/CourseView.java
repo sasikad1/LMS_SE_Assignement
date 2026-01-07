@@ -25,11 +25,6 @@ public class CourseView {
         this.controller = new CourseController(courseService);
     }
 
-    // Alternative constructor for backward compatibility
-    public CourseView(Scanner scanner) {
-        this(scanner, new CourseServiceImpl());
-    }
-
 
     public void start() {
         while (true) {
@@ -40,7 +35,10 @@ public class CourseView {
                 case LIST_COURSES -> listCourses();
                 case UPDATE_COURSE -> updateCourse();
                 case DELETE_COURSE -> deleteCourse();
-                case EXIT -> { System.out.println("Back to Main Menu."); return; }
+                case EXIT -> {
+                    System.out.println("Back to Main Menu.");
+                    return;
+                }
             }
         }
     }
