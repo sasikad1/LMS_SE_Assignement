@@ -4,6 +4,7 @@ import com.university.lms.model.Student;
 import com.university.lms.service.StudentService;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -68,5 +69,17 @@ public class StudentServiceImpl implements StudentService {
         return students.stream()
                 .filter(Student::isActive)
                 .toList();
+    }
+
+    public List<Student> searchStudentsByName(String name) {
+        return students.stream()
+                .filter(s -> s.getName().toLowerCase().contains(name.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
+    public List<Student> getSortedStudents() {
+        return students.stream()
+                .sorted(Comparator.comparing(Student::getName))
+                .collect(Collectors.toList());
     }
 }

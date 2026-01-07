@@ -43,4 +43,13 @@ public class StudentController {
     public List<Student> getActiveStudents() {
         return studentService.getActiveStudents();
     }
+
+
+    public List<Student> searchStudents(String name) {
+        return studentService.searchStudentsByName(name);
+    }
+
+    public List<Student> getSortedStudentList() {
+        return studentService.getSortedStudents();
+    }
 }

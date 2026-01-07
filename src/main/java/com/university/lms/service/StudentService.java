@@ -11,4 +11,7 @@ public interface StudentService {
     boolean deleteStudent(int id);
     List<Student> getAllStudents();
     List<Student> getActiveStudents();
+
+    List<Student> searchStudentsByName(String name);
+    List<Student> getSortedStudents();
 }
