@@ -9,6 +9,7 @@ public class EnrollmentController {
 
     private final EnrollmentService enrollmentService;
 
+    // Constructor injection
     public EnrollmentController(EnrollmentService enrollmentService) {
         this.enrollmentService = enrollmentService;
     }

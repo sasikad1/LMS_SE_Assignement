@@ -28,6 +28,7 @@ public class EnrollmentView {
         this.scanner = scanner;
         this.studentService = studentService;
         this.courseService = courseService;
+        // Creating EnrollmentController with injected EnrollmentService
         this.controller = new EnrollmentController(enrollmentService);
     }
 
@@ -60,12 +61,11 @@ public class EnrollmentView {
     private void enrollStudent() {
         System.out.println("\n=== Enroll Student ===");
 
-        // Show available students
+        // Use injected services
         System.out.println("Available Students:");
         studentService.getAllStudents().forEach(s ->
                 System.out.println("  ID: " + s.getId() + " | Name: " + s.getName()));
 
-        // Show available courses
         System.out.println("\nAvailable Courses:");
         courseService.getAllCourses().forEach(c ->
                 System.out.println("  ID: " + c.getId() + " | " + c.getTitle()));
@@ -77,9 +77,9 @@ public class EnrollmentView {
         boolean success = controller.enrollStudent(studentId, courseId);
 
         if (success) {
-            System.out.println("✅ Enrollment successful!");
+            System.out.println("Enrollment successful!");
         } else {
-            System.out.println("❌ Enrollment failed. Check if student/course exists.");
+            System.out.println("Enrollment failed. Check if student/course exists.");
         }
     }
 
