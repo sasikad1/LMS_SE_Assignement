@@ -21,19 +21,17 @@ public class EnrollmentServiceImpl implements EnrollmentService {
 
     @Override
     public boolean enrollStudent(int studentId, int courseId) {
-        // Validate student exists
+        // Validate using injected services
         if (studentService.getStudent(studentId) == null) {
             System.out.println("Student ID " + studentId + " not found.");
             return false;
         }
 
-        // Validate course exists
         if (courseService.getCourse(courseId) == null) {
             System.out.println("Course ID " + courseId + " not found.");
             return false;
         }
 
-        // Check for duplicate enrollment
         Enrollment newEnrollment = new Enrollment(studentId, courseId);
         if (enrollments.contains(newEnrollment)) {
             System.out.println("Student is already enrolled in this course.");
