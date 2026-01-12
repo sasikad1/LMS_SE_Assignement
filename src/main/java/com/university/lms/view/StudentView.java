@@ -170,4 +170,5 @@ public class StudentView {
             list.forEach(System.out::println);
         }
     }
+
 }

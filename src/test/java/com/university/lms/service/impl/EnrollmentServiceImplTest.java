@@ -23,7 +23,7 @@ class EnrollmentServiceImplTest {
         enrollmentService = new EnrollmentServiceImpl(studentService, courseService);
 
         // Pre-populating data needed for enrollment tests
-        studentService.createStudent(new Student(1, "Test Student", "test@univ.edu"));
+        studentService.addStudent(new Student(1, "Test Student", "test@univ.edu"));
         courseService.createCourse(new Course(101, "Java Programming", "Basics of Java", 3, "Dr. Smith"));
     }
 

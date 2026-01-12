@@ -34,7 +34,7 @@ class EnrollmentControllerTest {
         enrollmentController = new EnrollmentController(enrollmentService);
 
         // Pre-populate data required for enrollment
-        studentService.createStudent(new Student(1, "John Doe", "john@university.com"));
+        studentService.addStudent(new Student(1, "John Doe", "john@university.com"));
         courseService.createCourse(new Course(101, "Algorithms", "Advanced Algorithms", 4, "Dr. Turing"));
     }
 

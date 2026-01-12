@@ -14,7 +14,7 @@ public class StudentServiceImpl implements StudentService {
 
     // CREATE
     @Override
-    public boolean createStudent(Student student) {
+    public boolean addStudent(Student student) {
 
         boolean exists = students.stream()
                 .anyMatch(s -> s.getId() == student.getId());

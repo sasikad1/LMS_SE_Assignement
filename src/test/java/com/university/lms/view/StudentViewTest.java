@@ -58,7 +58,7 @@ class StudentViewTest {
     @Test
     void testSearchStudentFlow() {
         // Pre-populate data
-        studentService.createStudent(new Student(202, "Alice Smith", "alice@email.com"));
+        studentService.addStudent(new Student(202, "Alice Smith", "alice@email.com"));
 
         // Sequence:
         // 5 (Choice: Search by Name)

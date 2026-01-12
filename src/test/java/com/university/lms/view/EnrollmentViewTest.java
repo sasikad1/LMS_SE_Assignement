@@ -32,7 +32,7 @@ class EnrollmentViewTest {
         enrollmentService = new EnrollmentServiceImpl(studentService, courseService);
 
         // Pre-populate data so the menu has something to show and enroll
-        studentService.createStudent(new Student(1, "Saman Kumara", "saman@cinec.edu"));
+        studentService.addStudent(new Student(1, "Saman Kumara", "saman@cinec.edu"));
         courseService.createCourse(new Course(101, "Java Basics", "Intro", 3, "Dr. Smith"));
     }
 

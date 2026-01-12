@@ -15,7 +15,7 @@ public class StudentController {
     }
 
     public boolean addStudent(Student student) {
-        return studentService.createStudent(student);
+        return studentService.addStudent(student);
     }
 
     public Student getStudentById(int id) {

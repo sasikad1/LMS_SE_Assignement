@@ -5,7 +5,7 @@ import com.university.lms.model.Student;
 import java.util.List;
 
 public interface StudentService {
-    boolean createStudent(Student student);
+    boolean addStudent(Student student);
     Student getStudent(int id);
     boolean updateStudent(Student student);
     boolean deleteStudent(int id);

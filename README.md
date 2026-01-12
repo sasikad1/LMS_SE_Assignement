@@ -4,7 +4,7 @@ A robust, refactored Java-based Console Application designed for managing studen
 
 ---
 
-## 🏗System Architecture
+## System Architecture
 The system has been refactored from a monolithic structure to a **Three-Tier Architecture** to ensure loose coupling and high maintainability.
 
 
@@ -50,7 +50,7 @@ src/
 
 ```
 ---
-## 🛠How to Run
+## How to Run
 
 To get the system up and running on your local machine, follow these steps:
 

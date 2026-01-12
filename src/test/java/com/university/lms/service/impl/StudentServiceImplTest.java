@@ -14,14 +14,14 @@ class StudentServiceImplTest {
     void setUp() {
         studentService = new StudentServiceImpl();
         // Pre-populating data for testing
-        studentService.createStudent(new Student(1, "Saman Kumara", "saman@cinec.edu"));
-        studentService.createStudent(new Student(2, "Amara Siri", "amara@cinec.edu"));
+        studentService.addStudent(new Student(1, "Saman Kumara", "saman@cinec.edu"));
+        studentService.addStudent(new Student(2, "Amara Siri", "amara@cinec.edu"));
     }
 
     @Test
-    void testCreateStudentSuccess() {
+    void testAddStudentSuccess() {
         Student newStudent = new Student(3, "Nimmi Perera", "nimmi@cinec.edu");
-        boolean result = studentService.createStudent(newStudent);
+        boolean result = studentService.addStudent(newStudent);
 
         assertTrue(result, "New student should be added successfully.");
         assertEquals(3, studentService.getAllStudents().size());
@@ -31,7 +31,7 @@ class StudentServiceImplTest {
     void testPreventDuplicateId() {
         // Attempting to add a student with an existing ID (ID: 1)
         Student duplicateStudent = new Student(1, "New Name", "new@cinec.edu");
-        boolean result = studentService.createStudent(duplicateStudent);
+        boolean result = studentService.addStudent(duplicateStudent);
 
         assertFalse(result, "System must prevent adding two students with the same ID.");
     }
